@@ -1,0 +1,13 @@
+.card {
+  background: none;
+  max-width: 30rem;
+  border: var(--border);
+  box-shadow: var(--first-shadow);
+  margin: 50px auto;
+  color: var(--first-text-color);
+}
+
+.card-header {
+  border-bottom: var(--border);
+  box-shadow: var(--first-shadow);
+}
