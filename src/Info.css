@@ -1,0 +1,7 @@
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+  line-height: 2;
+  font-size: 26px;
+}

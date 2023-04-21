@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Location from "./Location";
+import Info from "./Info";
 
 export default function WeatherApp() {
   return (
@@ -12,6 +13,7 @@ export default function WeatherApp() {
       <Row xs={3}>
         <Col sm>
           <Location />
+          <Info />
         </Col>
         <Col sm>col 2</Col>
         <Col sm>col 3</Col>
