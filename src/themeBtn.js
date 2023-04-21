@@ -1,3 +1,4 @@
+import React from "react";
 import "./themeBtn.css";
 
 export default function themeBtn() {
