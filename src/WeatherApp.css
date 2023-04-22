@@ -46,12 +46,40 @@ body {
   box-shadow: var(--first-shadow);
 }
 
+p {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
 ul,
 li {
   list-style: none;
   padding-left: 0;
   line-height: 2;
   font-size: 18px;
+}
+
+.unit-button {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.change-button {
+  background-color: var(--first-background-color);
+  color: var(--first-text-color);
+  text-shadow: var(--first-shadow);
+  border: var(--border-btn);
+  box-shadow: var(--first-shadow);
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 20px;
+}
+
+.change-button:hover {
+  background-color: var(--second-background-color);
+  color: var(--second-text-color);
+  text-shadow: var(--second-shadow);
 }
 
 .temp-card {

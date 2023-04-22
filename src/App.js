@@ -1,12 +1,12 @@
 import "./App.css";
 import React from "react";
 import WeatherApp from "./WeatherApp";
-import themeBtn from "./themeBtn";
+import ThemeButton from "./ThemeButton";
 
 function App() {
   return (
     <div className="App">
-      <themeBtn />
+      <ThemeButton />
       <WeatherApp />
     </div>
   );

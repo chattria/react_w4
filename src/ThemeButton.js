@@ -1,9 +1,9 @@
 import React from "react";
-import "./themeBtn.css";
+import "./ThemeButton.css";
 
-export default function themeBtn() {
+export default function ThemeButton() {
   return (
-    <div className="themeBtn">
+    <div className="Themebutton">
       <button className="theme-button" id="blue-screen">
         Blue screen
       </button>

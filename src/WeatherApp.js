@@ -53,6 +53,11 @@ export default function WeatherApp() {
               </Container>
             </Card.Body>
           </Card>
+          <div class="unit-button">
+            <button class="change-button" id="current-btn">
+              current
+            </button>
+          </div>
         </Col>
         <Col sm className="main-col">
           <Card className="temp-card">
