@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap");
+
+:root {
+  --first-background-color: #0007c9;
+  --first-text-color: #fff;
+  --first-shadow: 1px 1px 2px #fff, 0 0 0.1rem #fff, 0 0 0.1rem #fff;
+  --border-btn: 1px solid #fff;
+  --border: 2px solid #fff;
+
+  --second-background-color: #fff;
+  --second-text-color: #0007c9;
+  --second-shadow: 1px 1px 2px #0007c9, 0 0 0.1rem #0007c9, 0 0 0.1rem #0007c9;
+}
+
+body {
+  background: var(--first-background-color);
+  font-family: Consolas, "Fira Code", monospace;
+  color: var(--first-text-color);
+  text-shadow: var(--first-shadow);
+}
+
+.container-fluid {
+  padding: 0 50px 0 50px;
+}
+
+.row {
+  align-items: center;
+}
+
+.main-col {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.card {
+  background: none;
+  max-width: 30rem;
+  border: var(--border);
+  box-shadow: var(--first-shadow);
+  margin: 50px auto;
+  color: var(--first-text-color);
+}
+
+.card-header {
+  border-bottom: var(--border);
+  box-shadow: var(--first-shadow);
+}
+
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+  line-height: 2;
+  font-size: 18px;
+}
+
+.temp-card {
+  text-align: center;
+}
+
+.temp-card p {
+  padding-bottom: 40px;
+  margin: 0;
+}
+
+.temp-card p span {
+  font-size: 120px;
+}
+
+.card .description {
+  padding: 20px;
+  font-size: 35px;
+  text-transform: uppercase;
+}
