@@ -14,88 +14,11 @@ export default function Weather() {
   let [weather, setWeather] = useState({});
   let [loading, setLoading] = useState(false);
 
-  let dates = new Date();
-  let shortDays = ["SUN", "MON", "TUS", "WED", "THU", "FRI", "SAT"];
-
-  let tomorrow = new Date(dates.getTime() + 24 * 60 * 60 * 1000);
-  let dayAfterTomorrow = new Date(dates.getTime() + 2 * 24 * 60 * 60 * 1000);
-  let thirdDay = new Date(dates.getTime() + 3 * 24 * 60 * 60 * 1000);
-  let fourthDay = new Date(dates.getTime() + 4 * 24 * 60 * 60 * 1000);
-  let fifthDay = new Date(dates.getTime() + 5 * 24 * 60 * 60 * 1000);
-  let sixthDay = new Date(dates.getTime() + 6 * 24 * 60 * 60 * 1000);
-
-  document.querySelector("#tomorrow").innerHTML = shortDays[tomorrow.getDay()];
-  document.querySelector("#day-after-tomorrow").innerHTML =
-    shortDays[dayAfterTomorrow.getDay()];
-  document.querySelector("#third-day").innerHTML = shortDays[thirdDay.getDay()];
-  document.querySelector("#fourth-day").innerHTML =
-    shortDays[fourthDay.getDay()];
-  document.querySelector("#fifth-day").innerHTML = shortDays[fifthDay.getDay()];
-  document.querySelector("#sixth-day").innerHTML = shortDays[sixthDay.getDay()];
-
-  function formatDate(datestamp) {
-    let dates = new Date(datestamp);
-    let fullYear = dates.getFullYear();
-    let months = [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-    ];
-    let month = months[dates.getMonth()];
-    if (month < 10) {
-      month = `0${month}`;
-    }
-    let date = dates.getDate();
-    if (date < 10) {
-      date = `0${date}`;
-    }
-    return `${fullYear}-${month}-${date}`;
-  }
-
-  function formatDay(daystamp) {
-    let dates = new Date(daystamp);
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuseday",
-      "Wednesday",
-      "Thurseday",
-      "Friday",
-      "Saturday",
-    ];
-    let day = days[dates.getDay()];
-    return day;
-  }
-
-  function formatTime(timestamp) {
-    let dates = new Date(timestamp);
-    let hours = dates.getHours();
-    let minutes = dates.getMinutes();
-    if (minutes < 10) {
-      minutes = `0${minutes}`;
-    }
-    let seconds = dates.getSeconds();
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
-    return `${hours}:${minutes}:${seconds}`;
-  }
-
-  function formatDayForecast(timestamp) {}
-
   function showWeather(response) {
     console.log(response.data);
     setLoading(true);
     setWeather({
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       country: response.data.sys.country,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
@@ -104,8 +27,6 @@ export default function Weather() {
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      today: formatDay(response.data.dt * 1000),
-      date: formatDay(response.data.dt * 1000),
     });
   }
 
@@ -191,6 +112,7 @@ export default function Weather() {
           </Col>
           <Col sm className="main-col">
             <Card className="temp-card">
+              <img src={weather.icon} alt={weather.description} />
               <p class="description">{weather.description}</p>
               <p id="temp-num">
                 <span id="temp">{weather.temperature}</span>
@@ -228,39 +150,27 @@ export default function Weather() {
                     </Col>
                     <Col>
                       <li>
-                        <span className="forecast" id="tom-degree">
-                          0
-                        </span>
+                        <span className="forecast" id="tom-degree"></span>
                         <span className="unit"> ºc</span>
                       </li>
                       <li>
-                        <span className="forecast" id="day-degree">
-                          0
-                        </span>
+                        <span className="forecast" id="day-degree"></span>
                         <span className="unit"> ºc</span>
                       </li>
                       <li>
-                        <span className="forecast" id="thi-degree">
-                          0
-                        </span>
+                        <span className="forecast" id="thi-degree"></span>
                         <span className="unit"> ºc</span>
                       </li>
                       <li>
-                        <span className="forecast" id="fou-degree">
-                          0
-                        </span>
+                        <span className="forecast" id="fou-degree"></span>
                         <span className="unit"> ºc</span>
                       </li>
                       <li>
-                        <span className="forecast" id="fif-degree">
-                          0
-                        </span>
+                        <span className="forecast" id="fif-degree"></span>
                         <span className="unit"> ºc</span>
                       </li>
                       <li>
-                        <span className="forecast" id="six-degree">
-                          0
-                        </span>
+                        <span className="forecast" id="six-degree"></span>
                         <span className="unit"> ºc</span>
                       </li>
                     </Col>
