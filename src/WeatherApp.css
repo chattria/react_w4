@@ -1,24 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap");
-
-:root {
-  --first-background-color: #0007c9;
-  --first-text-color: #fff;
-  --first-shadow: 1px 1px 2px #fff, 0 0 0.1rem #fff, 0 0 0.1rem #fff;
-  --border-btn: 1px solid #fff;
-  --border: 2px solid #fff;
-
-  --second-background-color: #fff;
-  --second-text-color: #0007c9;
-  --second-shadow: 1px 1px 2px #0007c9, 0 0 0.1rem #0007c9, 0 0 0.1rem #0007c9;
-}
-
-body {
-  background: var(--first-background-color);
-  font-family: Consolas, "Fira Code", monospace;
-  color: var(--first-text-color);
-  text-shadow: var(--first-shadow);
-}
-
 .container-fluid {
   padding: 0 50px 0 50px;
 }
@@ -33,7 +12,7 @@ body {
 }
 
 .card {
-  background: none;
+  background: var(--first-background-color);
   max-width: 30rem;
   border: var(--border);
   box-shadow: var(--first-shadow);
@@ -108,7 +87,7 @@ li {
   position: relative;
 }
 
-#search-btn {
+.search-btn {
   height: 40px;
   position: absolute;
   top: 0;
@@ -124,7 +103,7 @@ li {
   box-shadow: var(--first-shadow);
 }
 
-#search-btn:hover {
+.search-btn:hover {
   background-color: var(--second-background-color);
   color: var(--second-text-color);
   text-shadow: var(--second-shadow);
