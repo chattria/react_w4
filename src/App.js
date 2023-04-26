@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <ThemeButton />
-      <WeatherApp />
+      <WeatherApp defaultCity="Stockholm" />
       <Footer />
     </div>
   );

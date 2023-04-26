@@ -9,6 +9,7 @@ export default function Footer() {
         href="https://github.com/chattria/react_w4"
         target="_blank"
         id="info-link"
+        rel="noreferrer"
       >
         open-sourced on GitHub
       </a>

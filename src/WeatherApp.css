@@ -91,7 +91,7 @@ p {
 }
 
 .temp-card p {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   margin: 0;
 }
 
@@ -100,9 +100,15 @@ p {
 }
 
 .card .description {
-  padding: 20px;
+  padding: 5px;
   font-size: 35px;
   text-transform: uppercase;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 100px;
 }
 
 /*Search*/
