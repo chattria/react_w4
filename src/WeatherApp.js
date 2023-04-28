@@ -10,6 +10,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 
+import FormatDate from "./FormatDate";
+import Current from "./Current";
+
 export default function WeatherApp(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
@@ -26,6 +29,8 @@ export default function WeatherApp(props) {
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
+
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -108,10 +113,12 @@ export default function WeatherApp(props) {
             </Col>
             <Col sm className="main-col">
               <Card>
-                <Card.Header className="date"></Card.Header>
+                <Card.Header className="date">
+                  {" "}
+                  <FormatDate />{" "}
+                </Card.Header>
                 <Card.Body>
-                  <p id="today"></p>
-                  <p id="time"></p>
+                  <Current date={weatherData.date} />
                 </Card.Body>
               </Card>
 
