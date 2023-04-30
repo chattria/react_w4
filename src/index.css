@@ -12,7 +12,7 @@
   --second-shadow: 1px 1px 2px #0007c9, 0 0 0.1rem #0007c9, 0 0 0.1rem #0007c9;
 }
 
-body {
+.index {
   background: var(--first-background-color);
   font-family: Consolas, "Fira Code", monospace;
   color: var(--first-text-color);

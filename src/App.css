@@ -12,27 +12,27 @@
   --second-shadow: 1px 1px 2px #0007c9, 0 0 0.1rem #0007c9, 0 0 0.1rem #0007c9;
 }
 
-body {
+.App {
   background: var(--first-background-color);
   font-family: Consolas, "Fira Code", monospace;
   color: var(--first-text-color);
   text-shadow: var(--first-shadow);
 }
 
-.container-fluid {
+.App .container-fluid {
   padding: 0 50px 0 50px;
 }
 
-.row {
+.App .row {
   align-items: center;
 }
 
-.main-col {
+.App .main-col {
   margin: 0 auto;
   padding: 10px;
 }
 
-.card {
+.App .card {
   background: transparent;
   max-width: 30rem;
   border: var(--border);
@@ -41,12 +41,12 @@ body {
   color: var(--first-text-color);
 }
 
-.card-header {
+.App .card-header {
   border-bottom: var(--border);
   box-shadow: var(--first-shadow);
 }
 
-ul,
+.App ul,
 li {
   list-style: none;
   padding-left: 0;
@@ -54,22 +54,22 @@ li {
   font-size: 26px;
 }
 
-.card-header {
+.App .card-header {
   font-size: 18px;
 }
 
-p {
+.App p {
   font-size: 26px;
   margin-bottom: 5px;
 }
 
-.unit-button {
+.App .unit-button {
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
 }
 
-.change-button {
+.App .change-button {
   background-color: var(--first-background-color);
   color: var(--first-text-color);
   text-shadow: var(--first-shadow);
@@ -80,46 +80,46 @@ p {
   font-size: 20px;
 }
 
-.change-button:hover {
+.App .change-button:hover {
   background-color: var(--second-background-color);
   color: var(--second-text-color);
   text-shadow: var(--second-shadow);
 }
 
-.temp-card {
+.App .temp-card {
   text-align: center;
 }
 
-.temp-card p {
+.App .temp-card p {
   padding-bottom: 20px;
   margin: 0;
 }
 
-.temp-card p span {
+.App .temp-card p span {
   font-size: 120px;
 }
 
-.card .description {
+.App .card .description {
   padding: 5px;
   font-size: 35px;
   text-transform: uppercase;
 }
 
-img {
+.App img {
   display: block;
   margin: auto;
   width: 100px;
 }
 
 /*Search*/
-.search-city {
+.App .search-city {
   width: 500px;
   margin: 0 auto;
   height: 40px;
   position: relative;
 }
 
-.search-btn {
+.App .search-btn {
   height: 40px;
   position: absolute;
   top: 0;
@@ -135,14 +135,14 @@ img {
   box-shadow: var(--first-shadow);
 }
 
-.search-btn:hover {
+.App .search-btn:hover {
   background: var(--second-background-color);
   color: var(--second-text-color);
   text-shadow: var(--second-shadow);
   border: none;
 }
 
-#city-input {
+.App #city-input {
   height: 35px;
   background: transparent;
   position: absolute;
@@ -159,7 +159,7 @@ img {
   box-shadow: var(--first-shadow);
 }
 
-#city-input:focus {
+.App #city-input:focus {
   background-color: transparent;
   border: 0;
 }
