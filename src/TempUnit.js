@@ -14,9 +14,9 @@ export default function TempUnit(props) {
     setUnit("celsius");
   }
 
-  function fahrenheit() {
+  /*function fahrenheit() {
     return (props.celsius * 9) / 5 + 32;
-  }
+  }*/
 
   if (unit === "celsius") {
     return (
