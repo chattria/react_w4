@@ -63,11 +63,11 @@ p {
   margin-bottom: 5px;
 }
 
-.unit-button {
+/*.unit-button {
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
-}
+}*/
 
 .change-button {
   background-color: var(--first-background-color);
@@ -105,7 +105,7 @@ p {
   text-transform: uppercase;
 }
 
-img {
+canvas {
   display: block;
   margin: auto;
   width: 100px;

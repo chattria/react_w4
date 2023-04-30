@@ -10,8 +10,13 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 
+import Location from "./Location";
+import Info from "./Info";
+import CurrentTemp from "./CurrentTemp";
 import FormatDate from "./FormatDate";
 import Current from "./Current";
+import Forcast from "./Forcast";
+import TempUnit from "./TempUnit";
 
 export default function WeatherApp(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -30,7 +35,6 @@ export default function WeatherApp(props) {
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-
       date: new Date(response.data.dt * 1000),
     });
   }
@@ -56,63 +60,21 @@ export default function WeatherApp(props) {
         <Container fluid className="Weather">
           <Row>
             <Col sm className="main-col">
-              <Card>
-                <Card.Header>Location</Card.Header>
-                <Card.Body>
-                  <p id="country">{weatherData.country}</p>
-                  <p id="city">{weatherData.city}</p>
-                </Card.Body>
-              </Card>
-              <Card>
-                <Card.Header>Info</Card.Header>
-                <Card.Body>
-                  <Container>
-                    <Row>
-                      <Col>
-                        <ul>
-                          <li>Low</li>
-                          <li>High</li>
-                          <li>Wind</li>
-                          <li>Humidity</li>
-                        </ul>
-                      </Col>
-                      <Col>
-                        <ul>
-                          <li>
-                            <span id="low">{weatherData.low}</span>
-                            <span className="unit"> ºc</span>
-                          </li>
-                          <li>
-                            <span id="high">{weatherData.high}</span>
-                            <span className="unit"> ºc</span>
-                          </li>
-                          <li>{weatherData.wind} km/h</li>
-                          <li>{weatherData.humidity} %</li>
-                        </ul>
-                      </Col>
-                    </Row>
-                  </Container>
-                </Card.Body>
-              </Card>
-              <div className="unit-button">
-                <Button className="change-button" id="current-btn">
-                  current
-                </Button>
-              </div>
+              <Location country={weatherData.country} city={weatherData.city} />
+              <Info
+                low={weatherData.low}
+                high={weatherData.high}
+                wind={weatherData.wind}
+                humidity={weatherData.humidity}
+              />
+              <TempUnit celsius={weatherData.temperature} />
             </Col>
             <Col sm className="main-col">
-              <Card className="temp-card">
-                <img src={weatherData.icon} alt={weatherData.description} />
-                <p className="description">{weatherData.description}</p>
-                <p id="temp-num">
-                  <span id="temp">{weatherData.temperature}</span>
-                  <span id="temp-unit" className="unit">
-                    {" "}
-                    ºc
-                  </span>
-                </p>
-              </Card>
-
+              <CurrentTemp
+                icon={weatherData.icon}
+                description={weatherData.description}
+                temperature={weatherData.temperature}
+              />
               <Form className="search-city" onSubmit={handleSubmit}>
                 <InputGroup>
                   <Button type="submit" className="search-btn">
@@ -131,59 +93,13 @@ export default function WeatherApp(props) {
             <Col sm className="main-col">
               <Card>
                 <Card.Header className="date">
-                  {" "}
-                  <FormatDate />{" "}
+                  <FormatDate />
                 </Card.Header>
                 <Card.Body>
                   <Current date={weatherData.date} />
                 </Card.Body>
               </Card>
-
-              <Card>
-                <Card.Header id="card-forcast">Forecast</Card.Header>
-                <Card.Body className="text-center">
-                  <Container>
-                    <Row>
-                      <Col>
-                        <ul>
-                          <li className="li-week" id="tomorrow"></li>
-                          <li className="li-week" id="day-after-tomorrow"></li>
-                          <li className="li-week" id="third-day"></li>
-                          <li className="li-week" id="fourth-day"></li>
-                          <li className="li-week" id="fifth-day"></li>
-                          <li className="li-week" id="sixth-day"></li>
-                        </ul>
-                      </Col>
-                      <Col>
-                        <li>
-                          <span className="forecast" id="tom-degree"></span>
-                          <span className="unit"> ºc</span>
-                        </li>
-                        <li>
-                          <span className="forecast" id="day-degree"></span>
-                          <span className="unit"> ºc</span>
-                        </li>
-                        <li>
-                          <span className="forecast" id="thi-degree"></span>
-                          <span className="unit"> ºc</span>
-                        </li>
-                        <li>
-                          <span className="forecast" id="fou-degree"></span>
-                          <span className="unit"> ºc</span>
-                        </li>
-                        <li>
-                          <span className="forecast" id="fif-degree"></span>
-                          <span className="unit"> ºc</span>
-                        </li>
-                        <li>
-                          <span className="forecast" id="six-degree"></span>
-                          <span className="unit"> ºc</span>
-                        </li>
-                      </Col>
-                    </Row>
-                  </Container>
-                </Card.Body>
-              </Card>
+              <Forcast />
             </Col>
           </Row>
         </Container>
