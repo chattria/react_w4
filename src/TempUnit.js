@@ -34,7 +34,6 @@ export default function TempUnit(props) {
   } else {
     return (
       <div className="unit-button">
-        <CurrentTemp temperature={fahrenheit()} />
         <Button className="change-button" type="button" onClick={showCel}>
           ºC
         </Button>
