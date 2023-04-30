@@ -16,7 +16,6 @@ import CurrentTemp from "./CurrentTemp";
 import FormatDate from "./FormatDate";
 import Current from "./Current";
 import Forcast from "./Forcast";
-import TempUnit from "./TempUnit";
 
 export default function WeatherApp(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -67,7 +66,6 @@ export default function WeatherApp(props) {
                 wind={weatherData.wind}
                 humidity={weatherData.humidity}
               />
-              <TempUnit celsius={weatherData.temperature} />
             </Col>
             <Col sm className="main-col">
               <CurrentTemp
