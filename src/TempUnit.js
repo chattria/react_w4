@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-import CurrentTemp from "./CurrentTemp";
-
 export default function TempUnit(props) {
   const [unit, setUnit] = useState("celsius");
 
