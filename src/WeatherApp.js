@@ -15,7 +15,7 @@ import Info from "./Info";
 import CurrentTemp from "./CurrentTemp";
 import FormatDate from "./FormatDate";
 import Current from "./Current";
-import Forcast from "./Forcast";
+import Forecast from "./Forecast";
 
 export default function WeatherApp(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -25,6 +25,7 @@ export default function WeatherApp(props) {
     console.log(response.data);
     setWeatherData({
       ready: true,
+      coord: response.data.coord,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       country: response.data.sys.country,
       city: response.data.name,
@@ -97,7 +98,11 @@ export default function WeatherApp(props) {
                   <Current date={weatherData.date} />
                 </Card.Body>
               </Card>
-              <Forcast />
+              <Forecast
+                coord={weatherData.coord}
+                icon={weatherData.icon}
+                description={weatherData.description}
+              />
             </Col>
           </Row>
         </Container>
